@@ -1,74 +1,51 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Site Under Construction</title>
-  <meta name="description" content="This site is currently under construction. Check back soon!">
-
-  <!-- Social -->
-  <meta property="og:title" content="Site Under Construction">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://matthewwalker.site/">
-  <meta property="og:image" content="Construction.png">
-  <meta property="og:image:alt" content="Yellow construction hat and caution tape">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#0b0b0b">
-
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matthew Walker</title>
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
-
 <body>
-<div class="bg-stripes" aria-hidden="true"></div>
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="./">MW</a>
 
-<div class="page">
-  <main class="Content" role="main" aria-labelledby="uc-title">
-    <!-- Decorative caution tapes -->
-    <div class="tape tape--tl" aria-hidden="true">CAUTION • WORK IN PROGRESS •</div>
-    <div class="tape tape--br" aria-hidden="true">DO NOT ENTER • CONSTRUCTION •</div>
+        <ul class="nav-links">
+            <li><a class="active" href="./">Home</a></li>
+            <li><a href="./projects/">Projects</a></li>
+            <li><a href="./contact/">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Header -->
-    <div class="brand">
-      <!-- Inline hard-hat icon (no external assets required). Replace with your PNG if you like. -->
-      <svg class="hat" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M8 40c0-11 9-20 20-20s20 9 20 20v4H8v-4z" fill="#F7C948"/>
-        <path d="M28 20v-4a4 4 0 0 1 8 0v4" fill="#F7C948" />
-        <path d="M6 44h52a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4z" fill="#101010"/>
-        <path d="M16 44v-4c0-7.7 6.3-14 14-14s14 6.3 14 14v4" fill="none" stroke="#101010" stroke-width="2"/>
-      </svg>
-      <h1 id="uc-title">I'm Under Construction!</h1>
-      <p class="tagline">Standby for making...</p>
-    </div>
-
-    <!-- Optional image you mentioned -->
-    <!-- If you have a file named Construction.png, it will show here. Otherwise, remove this <img>. -->
-    <img class="hero" src="Construction.png" alt="Construction graphic with tools and hat" />
-
-    <!-- Info box -->
-    <section class="info">
-      <p>
-        I'm rebuilding the site. Check back soon or follow updates.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn--primary" href="https://github.com/ExtremelyMediocre" aria-label="GithubLink">My Github</a>
-      </div>
+<main class="container">
+    <section class="hero">
+        <h1>Hi, I’m Matthew.</h1>
+        <p>Software Engineering GA @ University of Glasgow. XR/Unity, HCI, and building cool things.</p>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="beacon" aria-hidden="true"></div>
-      <small>© <span id="year"></span> Matthew Walker • All rights reserved</small>
-    </footer>
-  </main>
-</div>
+    <section class="slideshow" aria-label="Photo slideshow">
+        <div class="slide-frame">
+            <img id="slideImage" class="slide-image" src="" alt="" />
 
-<script>
-  // Set current year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+            <button class="slide-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+            <button class="slide-btn next" id="nextBtn" aria-label="Next slide">›</button>
+        </div>
+
+        <div class="slide-text">
+            <h2 id="slideTitle" class="slide-title"></h2>
+            <p id="slideCaption" class="slide-caption"></p>
+        </div>
+
+        <div id="slideDots" class="slide-dots" aria-label="Slide navigation"></div>
+    </section>
+</main>
+
+<footer class="footer">
+    <small>© <span id="year"></span> Matthew Walker</small>
+</footer>
+
+<script src="./js/app.js"></script>
 </body>
 </html>
