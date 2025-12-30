@@ -5,6 +5,13 @@
     --muted: #a9b7b2;
     --accent: #20c997;
     --border: rgba(231, 240, 237, 0.12);
+
+    /* your existing colour references */
+    --bg-panel: var(--panel);
+    --bg-elevated: #121a18;
+    --text-muted: var(--muted);
+    --text-main: var(--text);
+    --accent-soft: rgba(32, 201, 151, 0.10);
 }
 
 * { box-sizing: border-box; }
@@ -47,6 +54,19 @@ body {
     color: var(--text);
     font-weight: 700;
     letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.brand:hover .logo {
+    opacity: 0.85;
+    transform: translateY(-3px);
 }
 
 .nav-links {
@@ -265,6 +285,7 @@ body {
         aspect-ratio: 16 / 9;
     }
 }
+
 /* ===== PROJECT DETAIL ===== */
 .project-detail {
     margin-top: 24px;
@@ -322,6 +343,7 @@ body {
 .btn-accent {
     background: var(--accent-soft);
 }
+
 /* ===== CONTACT ===== */
 .contact-card {
     margin-top: 24px;
@@ -357,4 +379,23 @@ body {
     border: none;
     border-top: 1px solid var(--border);
     margin: 20px 0;
+}
+
+/* ===== GAME WINDOW ===== */
+.game-frame {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    margin: 24px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.game-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
