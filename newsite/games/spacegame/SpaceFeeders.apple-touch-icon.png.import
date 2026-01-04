@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt4vsromxms33"
-path="res://.godot/imported/Brackeys Game Jam 2024.2 Submission.png-eb2a498407a1677baea2333bbe0f840f.ctex"
+uid="uid://d1dxj337tvx33"
+path="res://.godot/imported/SpaceFeeders.apple-touch-icon.png-658776eb31cc2c943a1f466866b045f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Exports/Web/Brackeys Game Jam 2024.2 Submission.png"
-dest_files=["res://.godot/imported/Brackeys Game Jam 2024.2 Submission.png-eb2a498407a1677baea2333bbe0f840f.ctex"]
+source_file="res://Exports/Web/SpaceFeeders.apple-touch-icon.png"
+dest_files=["res://.godot/imported/SpaceFeeders.apple-touch-icon.png-658776eb31cc2c943a1f466866b045f6.ctex"]
 
 [params]
 

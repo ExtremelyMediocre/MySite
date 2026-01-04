@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Untitled Speed Game | Projects</title>
+
+    <link rel="stylesheet" href="../../css/styles.css" />
+
+    <style>
+        .project-hero {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.25);
+            margin-top: 20px;
+        }
+
+        .project-hero img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .game-description {
+            margin-top: 18px;
+            color: var(--text-muted);
+            max-width: 70ch;
+        }
+    </style>
+</head>
+
+<body>
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="/">
+            <img src="/img/logo.png" alt="Matthew Walker logo" class="logo" />
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="..">Projects</a></li>
+            <li><a href="/newsite/contact">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>Untitled Speed Game</h1>
+        <p>
+            A fast-paced movement-focused game inspired by arcade speed-runs and tight,
+            responsive controls.
+        </p>
+    </section>
+
+    <!-- HERO IMAGE -->
+    <div class="project-hero">
+        <img src="/img/speedgame1.png" alt="Untitled Speed Game preview image" />
+    </div>
+
+    <!-- DESCRIPTION -->
+    <p class="game-description">
+        Untitled Speed Game is an experimental project exploring <strong>momentum-driven
+        gameplay</strong>, tight feedback loops, and a pure focus on player movement.
+        The goal is to create something that feels immediately responsive and satisfying,
+        where mastering the controls leads to faster times and smoother runs.
+    </p>
+
+    <p class="game-description">
+        This project is currently <strong>early in development</strong>.
+        Core mechanics, UI, visual direction and level design are still evolving.
+        I’m iterating quickly and treating this as a learning exercise in game feel,
+        polish, and rapid prototyping.
+    </p>
+
+    <section class="project-detail">
+        <div class="detail-card">
+
+            <h2>Technologies & Focus Areas</h2>
+            <ul class="detail-list">
+                <li>Fast movement & traversal mechanics</li>
+                <li>Player feedback & game feel</li>
+                <li>Iteration-driven prototyping</li>
+                <li>Level flow & replayability</li>
+            </ul>
+
+            <div class="project-meta">
+                <span class="tag">Game Dev</span>
+                <span class="tag">Prototype</span>
+                <span class="tag">In-Progress</span>
+            </div>
+
+            <div class="detail-actions">
+                <a class="btn" href="..">← Back to Projects</a>
+                <a class="btn btn-accent" href="https://github.com/ExtremelyMediocre" target="_blank" rel="noreferrer">
+                    View on GitHub
+                </a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <small>© <span id="year"></span> Matthew Walker</small>
+</footer>
+
+<script src="../../../js/app.js"></script>
+</body>
+</html>
