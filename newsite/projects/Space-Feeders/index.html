@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Space Game | Projects</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+
+    <style>
+        /* GAME WINDOW */
+        .game-wrapper {
+            width: 100%;
+            max-width: 960px;
+            margin: 24px auto;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .game-title {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .game-btn {
+            padding: 6px 10px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-main);
+            cursor: pointer;
+        }
+
+        .game-btn:hover {
+            border-color: rgba(32, 201, 151, 0.35);
+        }
+
+        .game-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,0.25);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .game-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .game-overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: rgba(0,0,0,0.65);
+        }
+
+        .play-btn {
+            padding: 12px 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--accent-soft);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .play-btn:hover {
+            border-color: rgba(32, 201, 151, 0.35);
+        }
+    </style>
+</head>
+
+<body>
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="../../..">
+            <img src="/img/logo.png" alt="Matthew Walker logo" class="logo" />
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="../../..">Home</a></li>
+            <li><a class="active" href="..">Projects</a></li>
+            <li><a href="../../contact">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- GAME FIRST -->
+    <div class="game-wrapper">
+
+        <div class="game-header">
+            <h2 class="game-title">Space Game — Web Build</h2>
+
+            <div class="game-controls">
+                <button class="game-btn" id="fullscreenBtn">⛶ Maximise</button>
+            </div>
+        </div>
+
+        <div class="game-frame" id="gameFrame">
+            <iframe id="gameIframe" allow="fullscreen; gamepad"></iframe>
+
+            <div class="game-overlay" id="gameOverlay">
+                <button class="play-btn" id="playBtn">▶ Play</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <section class="hero">
+        <p>
+            A top-down space survival game where you pilot a ship, dodge threats,
+            crack open alien eggs, and fight off swarming space creatures.
+        </p>
+    </section>
+
+    <section class="project-detail">
+        <div class="detail-card">
+
+            <h2>What I built</h2>
+            <ul class="detail-list">
+                <li>RigidBody2D-driven player ship</li>
+                <li>Enemy swarm AI</li>
+                <li>Combat loop & drops</li>
+                <li>Procedural spawning</li>
+                <li>Browser-based Godot build</li>
+            </ul>
+
+            <div class="project-meta">
+                <span class="tag">Godot</span>
+                <span class="tag">GDScript</span>
+                <span class="tag">Web Export</span>
+                <span class="tag">Game AI</span>
+            </div>
+
+            <div class="detail-actions">
+                <a class="btn" href="..">← Back to Projects</a>
+                <a class="btn btn-accent" href="https://github.com/ExtremelyMediocre" target="_blank" rel="noreferrer">
+                    View on GitHub
+                </a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <small>© <span id="year"></span> Matthew Walker</small>
+</footer>
+
+<script>
+    const playBtn = document.getElementById("playBtn");
+    const overlay = document.getElementById("gameOverlay");
+    const iframe = document.getElementById("gameIframe");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+    // IMPORTANT — update to your actual Godot loader file:
+    const GAME_URL = "../../games/spacegame/SpaceFeeders.html";
+
+    playBtn.addEventListener("click", () => {
+        iframe.src = GAME_URL;
+        overlay.style.display = "none";
+    });
+
+    fullscreenBtn.addEventListener("click", () => {
+        if (iframe.requestFullscreen) iframe.requestFullscreen();
+    });
+</script>
+
+<script src="../../../js/app.js"></script>
+</body>
+</html>

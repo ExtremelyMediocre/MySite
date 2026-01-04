@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matthew Walker</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="..">
+            <img src="/img/logo.png" alt="Matthew Walker logo" class="logo" />
+        </a>
+
+
+
+        <ul class="nav-links">
+            <li><a class="active" href="..">Home</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="contact">Contact Me</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>Hi, I’m Matthew.</h1>
+        <p>Software Engineering GA @ University of Glasgow. XR/Unity, HCI, and building cool things.</p>
+    </section>
+
+    <section class="slideshow" aria-label="Photo slideshow">
+        <div class="slide-frame">
+            <a id="slideLink">
+                <img id="slideImage" class="slide-image" src="" alt="" />
+            </a>
+
+            <button class="slide-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+            <button class="slide-btn next" id="nextBtn" aria-label="Next slide">›</button>
+        </div>
+
+        <div class="slide-text">
+            <h2 id="slideTitle" class="slide-title"></h2>
+            <p id="slideCaption" class="slide-caption"></p>
+        </div>
+
+        <div id="slideDots" class="slide-dots" aria-label="Slide navigation"></div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <small>© <span id="year"></span> Matthew Walker</small>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
