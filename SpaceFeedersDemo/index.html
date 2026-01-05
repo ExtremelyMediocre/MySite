@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Spacefeeders – Play</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        :root {
+            --bg: #050809;
+            --panel: #0b1113;
+            --text: #e7f0ed;
+            --accent: #20c997;
+            --border: rgba(231, 240, 237, 0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: radial-gradient(circle at top, #0f2027 0%, #050809 50%, #020304 100%);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+        }
+
+        .topbar {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .fullscreen-btn {
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(32, 201, 151, 0.7);
+            background: radial-gradient(circle at top left, #34d399, #059669);
+            color: #02130c;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(16,185,129,0.35);
+            transition: transform 120ms ease, box-shadow 120ms ease;
+        }
+
+        .fullscreen-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(16,185,129,0.45);
+        }
+
+        .game-shell {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .game-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: radial-gradient(circle at top, rgba(16, 24, 32, 0.9), rgba(3, 5, 8, 0.98));
+            z-index: 2;
+            text-align: center;
+            padding: 18px;
+        }
+
+        .game-title {
+            font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.95;
+            margin-bottom: 4px;
+        }
+
+        .play-button {
+            margin-top: 4px;
+            padding: 0.85rem 1.6rem;
+            border-radius: 999px;
+            border: 1px solid rgba(32, 201, 151, 0.7);
+            background: radial-gradient(circle at top left, #34d399, #059669);
+            color: #02130c;
+            font-weight: 700;
+            font-size: 0.98rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 10px 24px rgba(16, 185, 129, 0.4);
+            transition: transform 120ms ease, box-shadow 120ms ease;
+        }
+
+        .play-button:hover {
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(16, 185, 129, 0.55);
+        }
+
+        .howto {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            max-width: 26rem;
+            line-height: 1.45rem;
+        }
+
+        .game-frame {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+
+        .game-frame.visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <button class="fullscreen-btn" id="fullscreenBtn">Maximise</button>
+</div>
+
+<main class="game-shell" id="gameShell">
+
+    <section class="game-overlay" id="overlay">
+        <h1 class="game-title">Spacefeeders</h1>
+
+        <button class="play-button" id="playButton">
+            <span>Play</span>
+        </button>
+
+        <div class="howto">
+            <strong>How to Play</strong><br>
+            • Left Click — Shoot<br>
+            • Space — Thrust (uses fuel)<br>
+            • E — Pulse (speed boost + destroys attached & nearby enemies) (costs 30% of total fuel)
+        </div>
+    </section>
+
+    <iframe
+            id="gameFrame"
+            class="game-frame"
+            src=""
+            allowfullscreen
+            loading="eager"
+    ></iframe>
+</main>
+
+<script>
+    const playButton = document.getElementById("playButton");
+    const overlay = document.getElementById("overlay");
+    const gameFrame = document.getElementById("gameFrame");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+    const shell = document.getElementById("gameShell");
+
+    playButton.addEventListener("click", () => {
+        gameFrame.src = "../newsite/games/spacegame/SpaceFeeders050126.html";
+        overlay.style.display = "none";
+        gameFrame.classList.add("visible");
+    });
+
+    fullscreenBtn.addEventListener("click", async () => {
+        if (!document.fullscreenElement) {
+            await shell.requestFullscreen().catch(() => {});
+        } else {
+            await document.exitFullscreen().catch(() => {});
+        }
+    });
+</script>
+
+</body>
+</html>
