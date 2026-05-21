@@ -1,28 +1,25 @@
 // HOME slideshow data
 const slides = [
     {
-        // 1) Space Feeders
-        src: "./img/spacefeeders1.png",
+        src: "img/spacefeeders1.png",
         alt: "Space Feeders thumbnail",
         title: "Space Feeders",
         caption: "Fast-paced arcade shooter with increasingly chaotic space enemies.",
-        link: "./projects/Space-Feeders/"
+        link: "projects/Space-Feeders/"
     },
     {
-        // 2) 3DPrinted ESP32 Lamp
-        src: "./img/ledbox1.png",
+        src: "img/ledbox1.png",
         alt: "3D Printed ESP32 Lamp thumbnail",
         title: "3DPrinted-ESP32-Lamp",
         caption: "Custom 3D printed smart lamp powered by an ESP32 and addressable LEDs.",
-        link: "./projects/3DPrinted-ESP32-Lamp/"
+        link: "projects/3DPrinted-ESP32-Lamp/"
     },
     {
-        // 3) Contact slide – logo + CTA
-        src: "/img/logo.png",
+        src: "img/logo.png",
         alt: "Matthew Walker logo",
         title: "Get in touch",
-        caption: "Contact me about projects, collaboration, or anything interesting.",
-        link: "./contact/"
+        caption: "Have a 3D print request or want to collaborate? Reach out.",
+        link: "contact/"
     }
 ];
 
