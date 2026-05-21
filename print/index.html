@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Print Service | Matthew Walker</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="/">
+            <img src="/img/logo.png" alt="Matthew Walker logo" class="logo" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/contact/">Contact Me</a></li>
+            <li><a class="active" href="/print/">3D Print Service</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>3D Print Service</h1>
+        <p>
+            Got something you want printed? Fill out the form below and I'll get back to you
+            with a quote and timeline. Have a model file ready? Email it after submitting.
+        </p>
+    </section>
+
+    <section class="contact-card print-request-card">
+
+        <div class="form-success" data-fs-success>
+            <p>Request sent — I'll be in touch soon!</p>
+            <p class="form-success-hint">
+                If you have a model file, email it to
+                <a href="mailto:matthewalker@matthewwalker.site">matthewalker@matthewwalker.site</a>
+                with the subject <em>"3D Print Request"</em>.
+            </p>
+        </div>
+
+        <div class="form-error-banner" data-fs-error></div>
+
+        <form class="print-form" id="print-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Your name" data-fs-field />
+                    <span class="field-error" data-fs-error="name"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com" data-fs-field />
+                    <span class="field-error" data-fs-error="email"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">What do you want printed? <span class="required">*</span></label>
+                <textarea
+                    id="description"
+                    name="description"
+                    required
+                    rows="4"
+                    placeholder="Describe the object — what it is, what it's for, any key dimensions…"
+                    data-fs-field
+                ></textarea>
+                <span class="field-error" data-fs-error="description"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="material">Material <span class="required">*</span></label>
+                    <select id="material" name="material" required data-fs-field>
+                        <option value="">Select a material</option>
+                        <option value="PLA">PLA (standard, rigid)</option>
+                        <option value="TPU">TPU (flexible / rubbery)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="colour">Colour <span class="required">*</span></label>
+                    <select id="colour" name="colour" required data-fs-field>
+                        <option value="">Select a colour</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" style="max-width:100px;" data-fs-field />
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional notes</label>
+                <textarea
+                    id="notes"
+                    name="notes"
+                    rows="3"
+                    placeholder="Deadline, finish quality, special requirements…"
+                    data-fs-field
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="has_file" value="yes" />
+                    I have a model file (.STL / .OBJ / .3MF) to send
+                </label>
+                <p class="field-hint">
+                    After submitting, email your file to
+                    <a href="mailto:matthewalker@matthewwalker.site">matthewalker@matthewwalker.site</a>
+                    with the subject <em>"3D Print Request"</em>.
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-submit" data-fs-submit-btn>Send Request</button>
+
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <small>© <span id="year"></span> Matthew Walker</small>
+</footer>
+
+<script src="/js/app.js"></script>
+<script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#print-form', formId: 'xgoqarge' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
